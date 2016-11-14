@@ -1,4 +1,4 @@
-<?php namespace BenAllfree\Trackable;
+<?php namespace BenAllfree\Forms;
 
 use Illuminate\Support\ServiceProvider;
 
