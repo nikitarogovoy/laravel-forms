@@ -1,0 +1,24 @@
+{
+  "name": "laravel-forms",
+  "homepage": "https://github.com/benallfree/laravel-forms",
+  "authors": [
+    "Ben Allfree <ben@benallfree.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "simplemde": "^1.11.2",
+    "bootstrap": "^3.3.7",
+    "respond": "^1.4.2",
+    "html5shiv": "^3.7.3",
+    "bootstrap-datepicker": "^1.6.4"
+  }
+}

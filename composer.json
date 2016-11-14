@@ -1,0 +1,24 @@
+{
+    "name": "benallfree/laravel-forms",
+    "description": "Quick and easy forms support for Laravel.",
+    "keywords": ["laravel", "forms"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben Allfree",
+            "email": "ben@benallfree.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "laravel/framework": "5.3.*",
+        "laravelcollective/html": "5.3.*",
+        "benallfree/laravel-stapler-images": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "BenAllfree\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
