@@ -1,3 +1,4 @@
+-if(!isset($help)) $help = ''
 :php
   $id = uniqid();
   $file_id = "file_{$id}";
@@ -6,7 +7,10 @@
   $delete_id = "delete_{$id}";
   if(!isset($image_size)) $image_size = 'thumb';
 %div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
-  %label =$placeholder
+  %label 
+    =$placeholder
+    @include('forms::partials.help_button')
+  @include('forms::partials.help_hint', ['help'=>$help])
   %input{:type=>'hidden', :name=>$name . "_delete", :id=>$delete_id, :value=>0}
   %input.form-control{:id=>$file_id, :placeholder => $placeholder, :type => 'file', :name=>$name}
   -if($errors->has($name))

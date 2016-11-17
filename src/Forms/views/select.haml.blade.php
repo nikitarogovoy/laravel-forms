@@ -1,3 +1,4 @@
+-if(!isset($help)) $help = ''
 :php
   if(is_a($options, 'Illuminate\Database\Eloquent\Collection'))
   {
@@ -24,7 +25,10 @@
     $options = $n;
   }
 %div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
-  %label =$placeholder
+  %label 
+    =$placeholder
+    @include('forms::partials.help_button')
+  @include('forms::partials.help_hint', ['help'=>$help])
   {!! Form::select($name, $options, Request::old($name, $obj->$name), ['class'=>'form-control', 'placeholder'=>$empty_choice]) !!}
   -if($errors->has($name))
     .help-block

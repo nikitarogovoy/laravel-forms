@@ -1,6 +1,10 @@
+-if(!isset($help)) $help = ''
 -$id = 'date_'.uniqid()
 %div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
-  %label =$placeholder
+  %label
+    =$placeholder
+    @include('forms::partials.help_button')
+  @include('forms::partials.help_hint', ['help'=>$help])
   .input-group.date{:id=>$id}
     -$v = Request::old($name, $obj->$name ? $obj->$name->format('m/d/Y') : \Carbon::now()->format('m/d/Y'))
     %input.form-control{:placeholder => $placeholder, :type => 'text', :name=>$name, :value=>$v}

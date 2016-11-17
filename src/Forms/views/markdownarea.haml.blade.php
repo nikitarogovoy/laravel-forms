@@ -1,6 +1,10 @@
+-if(!isset($help)) $help = ''
 -$id = uniqid().'_mkdn';
 %div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
-  %label =$placeholder
+  %label 
+    =$placeholder
+    @include('forms::partials.help_button')
+  @include('forms::partials.help_hint', ['help'=>$help])
   %textarea.form-control{:id=>$id, :name=>$name, :rows=>10, "data-provide"=>'markdown'} {{Request::old($name, $obj->$name)}}
   -if($errors->has($name))
     .help-block
