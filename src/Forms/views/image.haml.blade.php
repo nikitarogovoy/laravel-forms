@@ -1,4 +1,5 @@
 -if(!isset($help)) $help = ''
+-if(!isset($placeholder)) $placeholder = ''
 :php
   $id = uniqid();
   $file_id = "file_{$id}";
@@ -6,7 +7,7 @@
   $image_id = "image_{$id}";
   $delete_id = "delete_{$id}";
   if(!isset($image_size)) $image_size = 'thumb';
-%div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
+%div{:class=>"form-group  lf-container" . ($errors->has($name) ? ' has-error' : '') }
   %label 
     =$placeholder
     @include('forms::partials.help_button')

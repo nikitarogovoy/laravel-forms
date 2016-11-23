@@ -1,11 +1,12 @@
 -if(!isset($help)) $help = ''
+-if(!isset($placeholder)) $placeholder = ''
 :php
   $id = uniqid();
   $file_id = "file_{$id}";
   $remove_id = "remove_{$id}";
   $preview_id = "preview_{$id}";
   $delete_id = "delete_{$id}";
-%div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
+%div{:class=>"form-group  lf-container" . ($errors->has($name) ? ' has-error' : '') }
   %label 
     =$placeholder
     @include('forms::partials.help_button')
