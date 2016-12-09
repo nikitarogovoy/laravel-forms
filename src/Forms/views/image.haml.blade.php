@@ -1,4 +1,5 @@
 -if(!isset($help)) $help = ''
+-if(!isset($placeholder)) $placeholder = ''
 :php
   $id = uniqid();
   $file_id = "file_{$id}";

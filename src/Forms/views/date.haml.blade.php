@@ -1,6 +1,7 @@
 -if(!isset($help)) $help = ''
+-if(!isset($placeholder)) $placeholder = ''
 -$id = 'date_'.uniqid()
-%div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
+%div{:class=>"form-group  lf-container" . ($errors->has($name) ? ' has-error' : '') }
   %label
     =$placeholder
     @include('forms::partials.help_button')

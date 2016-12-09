@@ -1,5 +1,6 @@
 -if(!isset($help)) $help = ''
-%div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
+-if(!isset($placeholder)) $placeholder = ''
+%div{:class=>"form-group  lf-container" . ($errors->has($name) ? ' has-error' : '') }
   %label
     %input{:type=>"hidden", :name=>$name, :value=>0}
     {!! Form::checkbox($name, 1, Request::old($name, $obj->$name)); !!}

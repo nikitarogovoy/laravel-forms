@@ -1,4 +1,5 @@
 -if(!isset($help)) $help = ''
+-if(!isset($placeholder)) $placeholder = ''
 :php
   if(is_a($options, 'Illuminate\Database\Eloquent\Collection'))
   {
@@ -24,7 +25,7 @@
     }
     $options = $n;
   }
-%div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
+%div{:class=>"form-group  lf-container" . ($errors->has($name) ? ' has-error' : '') }
   %label 
     =$placeholder
     @include('forms::partials.help_button')
