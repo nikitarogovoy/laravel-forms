@@ -6,6 +6,7 @@
   $image_id = "image_{$id}";
   $delete_id = "delete_{$id}";
   if(!isset($image_size)) $image_size = 'thumb';
+  $camelName = camel_case($name);
 %div{:class=>"form-group" . ($errors->has($name) ? ' has-error' : '') }
   %label 
     =$placeholder
@@ -17,13 +18,13 @@
     .help-block
       %strong
         =$errors->first($name)
-  -if($obj->$name)
+  -if($obj->$camelName)
     %div{:id=>$image_id}
-      %img{:src=>$obj->$name->url($image_size)}
+      %img{:src=>$obj->$camelName->url($image_size)}
       %button.btn.btn-danger.btn-xs{:id=>$remove_id} Remove
   :javascript
     $(function() {
-      var has_image = #{$obj->$name != null ? 'true' : 'false'};
+      var has_image = #{$obj->$camelName != null ? 'true' : 'false'};
       if(has_image)
       {
         $('##{$file_id}').hide();
