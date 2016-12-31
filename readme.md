@@ -4,19 +4,37 @@ Forms is a Laravel 5 package designed to facilitate the easy use of Bootstrap-co
 
 ## Installation
 
-Laravel Forms uses the `laravelcollective/html` and `benallfree/laravel-stapler-images` packages. Configure these first by following their package instructions.
+Laravel Forms uses the `[laravelcollective/html](https://laravelcollective.com/docs/5.3/html)` and `[benallfree/laravel-stapler-images](https://github.com/benallfree/laravel-stapler-images)` packages. Configure these first by following their package instructions.
 
 In `app/config.php`:
 
 Add
 
     'providers' => [
+      // Laravel Stapler Images
+      BenAllfree\LaravelStaplerImages\LaravelStaplerImagesServiceProvider::class,
+      Codesleeve\LaravelStapler\Providers\L5ServiceProvider::class,
+      
+      // Laravel HTML
+      Collective\Html\HtmlServiceProvider::class,
+      
+      // Laravel Forms
       BenAllfree\Forms\FormsServiceProvider::class,
     ]
 
 Alias the models:
 
     'aliases' => [
+      // Laravel Stapler Images
+      'Image' => BenAllfree\LaravelStaplerImages\Image::class,
+      'Attachment' => BenAllfree\LaravelStaplerImages\Attachment::class,
+      
+      // Laravel HTML
+      'Form' => Collective\Html\FormFacade::class,
+      'Html' => Collective\Html\HtmlFacade::class,
+      
+      // Carbon
+      'Carbon'=>Carbon\Carbon::class,
     ]
 
 Then publish:

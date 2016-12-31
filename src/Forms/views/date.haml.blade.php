@@ -1,5 +1,6 @@
 -if(!isset($help)) $help = ''
 -if(!isset($placeholder)) $placeholder = ''
+-if(!isset($format)) $format = 'M/D/Y'
 -$id = 'date_'.uniqid()
 %div{:class=>"form-group  lf-container" . ($errors->has($name) ? ' has-error' : '') }
   %label
@@ -18,6 +19,6 @@
 :javascript
   $(function() {
     $('##{$id}').datetimepicker({
-      format: 'M/D/Y',
+      format: '#{$format}',
     });
   });
