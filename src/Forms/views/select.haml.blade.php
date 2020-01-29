@@ -30,7 +30,7 @@
     =$placeholder
     @include('forms::partials.help_button')
   @include('forms::partials.help_hint', ['help'=>$help])
-  {!! Form::select($name, $options, Request::old($name, $obj->$name), ['class'=>'form-control', 'placeholder'=>$empty_choice]) !!}
+  {!! Form::select($name, $options, Request::old($name, $obj->$name), ['class'=>'form-control', 'placeholder'=>$empty_choice, 'multiple'=>$multiple]) !!}
   -if($errors->has($name))
     .help-block
       %strong
