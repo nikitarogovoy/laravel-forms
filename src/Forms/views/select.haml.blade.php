@@ -25,12 +25,19 @@
     }
     $options = $n;
   }
+  $addOptions = [
+    'class' => "form-control {$class}",
+    'multiple' => $multiple,
+  ];
+  if (!$multiple) {
+    $addOptions['placeholder'] = $empty_choice;
+  }
 %div{:class=>"form-group  lf-container" . ($errors->has($name) ? ' has-error' : '') }
   %label 
     =$placeholder
     @include('forms::partials.help_button')
   @include('forms::partials.help_hint', ['help'=>$help])
-  {!! Form::select($name, $options, Request::old($name, $obj->$name), ['class'=>'form-control', 'placeholder'=>$empty_choice, 'multiple'=>$multiple]) !!}
+  {!! Form::select($name, $options, Request::old($name, $obj->$name), $addOptions) !!}
   -if($errors->has($name))
     .help-block
       %strong
