@@ -1,5 +1,6 @@
 -if(!isset($help)) $help = ''
 -if(!isset($placeholder)) $placeholder = ''
+-if(!isset($class)) $class = ''
 :php
   if(is_a($options, 'Illuminate\Database\Eloquent\Collection'))
   {
