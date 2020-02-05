@@ -2,6 +2,7 @@
 -if(!isset($placeholder)) $placeholder = ''
 -if(!isset($class)) $class = ''
 -if(!isset($multiple)) $multiple = false
+-if(!isset($value)) $value = null
 :php
   if(is_a($options, 'Illuminate\Database\Eloquent\Collection'))
   {
@@ -39,7 +40,7 @@
     =$placeholder
     @include('forms::partials.help_button')
   @include('forms::partials.help_hint', ['help'=>$help])
-  {!! Form::select($name, $options, Request::old($name, $obj->$name), $addOptions) !!}
+  {!! Form::select($name, $options, $value ?? Request::old($name, $obj->$name), $addOptions) !!}
   -if($errors->has($name))
     .help-block
       %strong
