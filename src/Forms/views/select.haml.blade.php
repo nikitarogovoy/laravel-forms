@@ -62,12 +62,16 @@
     window.{{$name}}Field = {!! json_encode($allOptions) !!}
     $(function() {
       $('body').on('change', 'select[name={{$depends}}]', function () {
-        let $this = $(this),
-          $currentOptions = $('select[name={{$name}}] option');
+        {{$name}}FieldPrepare($(this).val());
 
-        if (window.{{$name}}Field[$this.val()]) {
+        $('select[name={{$name}}]').val("");
+      });
+
+      function {{$name}}FieldPrepare(value) {
+        let $currentOptions = $('select[name={{$name}}] option');
+        if (window.{{$name}}Field[value]) {
           $currentOptions.each(function(index, item) {
-            if (window.{{$name}}Field[$this.val()][$(item).attr('value')]) {
+            if (window.{{$name}}Field[value][$(item).attr('value')]) {
               $(item).show().prop('disabled', false);
             } else {
               $(item).hide().prop('disabled', true);
@@ -78,7 +82,8 @@
             $(item).hide().prop('disabled', true);
           });
         }
-        $('select[name={{$name}}]').val("");
-      });
+      }
+
+      {{$name}}FieldPrepare($('select[name={{$depends}}]').val());
     });
 
